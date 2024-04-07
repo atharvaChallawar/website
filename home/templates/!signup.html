@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewUserRegistration</title>
+    <link rel="stylesheet" href="static/css/newUserPage.css">
+</head>
+
+<body>
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    </div>
+    {% endfor %}
+    <h2>Sign Up</h2>
+    <form action="/signup" method="post">
+    {% csrf_token %}
+    
+    <form action="">
+        <h2>User Registration</h2>
+        <div class="user">
+            <div>
+                <span class="detail"> Name </span>
+                <div class="gett">
+                    <input type="text" placeholder="Enter Your Name" required>
+                </div>
+            </div>
+            <div>
+                <span class="detail">Email Address </span>
+                <div class="gett"><input type="email" placeholder="Enter Your Email" required></div>
+            </div>
+            <div>
+                <span class="detail">New Password</span>
+                <div class="gett"><input type="password" placeholder="Enter Password" required></div>
+            </div>
+            <div class="special">
+                <span class="detail">Repeat Password</span> <div class="gett"> <input type="password" placeholder="Enter Password" required></div>
+            </div>
+            <div>
+                <button id = 'register'>Register</button>
+            </div>
+            <div>Already have an account?
+                <a href="signin.html">Login</a>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact page{% endblock %}
+
+{% block content %}
+
+    <h2>This is Contact page</h2>
+
+    <form action="" method="POST">
+        {% csrf_token %}      
+        <div class="input">
+            Name: <input type="text" id="name" name="name" required>
+        </div>
+        <div class="input">
+            Email: <input type="text" id="email" name="email" required>
+        </div>
+        <div class="input">
+            Description: <textarea id="description" name="description" required></textarea>
+        </div>          
+        <button type="submit" class="btn">Submit</button>
+    </form>
+
+{% endblock %}
