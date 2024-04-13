@@ -4,7 +4,6 @@
 {% block title %}Home page{% endblock %}
 
 {% block content %}
-
     {% csrf_token %}
     <h2>welcome to our site</h2>
     {% for message in messages %}
@@ -15,8 +14,6 @@
   </button>
     </div>
     {% endfor %}
-
-
 
     {% if user.is_authenticated %}
     <h3>Hello user!</h3>
@@ -32,5 +29,33 @@
     <button type="submit"><a href="/signin">SignIn</a></button>
 
     {% endif %}
+
+
+    {% for product in products %}
     
+    <div id="layout">
+        <h3>product name :{{product.productName}}</h3>
+        <h4>Description : </h4>
+        <p>{{product.desc}}</p>
+  
+        <img src="D:\Web Development\Website\FINAL\IMG\Turibidity_Sensor.jpg" alt="">
+        <p>Price :{{product.price}}</p>
+  
+        <a href="bee.html">
+            <button>BUY</button>
+        </a><br><br>
+        <a href="/checkout">
+            <button>Add to Cart</button>
+        </a>
+        <br><br>
+        <a href="/productView/{{product.productId}}">
+            <button>view</button>
+        </a>
+    </div>  
+    
+    
+    {% endfor %}
+
+
+
 {% endblock %}

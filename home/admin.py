@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Template,product,Contact
+from .models import template, product,contact
 
 # Register your models here.
-admin.site.register(Template)
+admin.site.register(template)
 admin.site.register(product)
-admin.site.register(Contact)
+admin.site.register(contact)
 

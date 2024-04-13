@@ -1,7 +1,8 @@
 
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-class Template(models.Model):
+class template(models.Model):
     name = models.CharField(max_length=255)
     pdf_file = models.FileField(upload_to='pdfs/')
     
@@ -21,7 +22,7 @@ class product(models.Model):
 
 
     
-class Contact(models.Model):
+class contact(models.Model):
     contactId= models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -29,4 +30,5 @@ class Contact(models.Model):
 
     def __str__(self):
         return self.name
+
 
